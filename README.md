@@ -2,7 +2,7 @@
 
   <img align="left" src= "https://img.shields.io/badge/License-MIT-green">
 
-  <img align="right" width="100" height="100" src="https://avatars.githubusercontent.com/u/59263270?">
+  <img align="right" width="300" height="300" src="https://avatars.githubusercontent.com/u/59263270?">
 
   
 # **Project** 
