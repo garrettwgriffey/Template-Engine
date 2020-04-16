@@ -12,7 +12,7 @@ const render = require("./lib/htmlRenderer");
 
 let myTeam = []
 
-function inquireQuestions() {
+function roundOne() {
     inquirer
       .prompt([
         {
@@ -36,33 +36,35 @@ function inquireQuestions() {
           choices: ['Manager', 'Engineer', 'Intern'],
           name: "role"
         }
-    ]).then(response => {
-        console.log(response)
-    roundTwo(response)
+    ]).then(response1 => {
+        console.log(response1)
+    roundTwo(response1)
     })
 }
-function roundTwo(answers) {
-    if(answers.role === 'Engineer') {
-        const attr = 'github username';
-        const Role = Engineer; 
-    } else if(answers.role === 'Manager') {
-        const attr = 'office number';
-        const Role = Manager; 
+function roundTwo(answers1) {
+  let attr;
+  let Role;
+    if(answers1.role === 'Engineer') {
+        attr = 'github username';
+        Role = Engineer; 
+    } else if(answers1.role === 'Manager') {
+        attr = 'office number';
+        Role = Manager; 
     } else{
-        const attr = 'school';
-        const Role = Intern; 
+        attr = 'school';
+        Role = Intern; 
     }
     inquirer
       .prompt([
         {
           type: "input",
           message: `What is your ${attr}?`,
-          name: "name"
+          name: "unique"
         },
-    ]).then(response => {
-        const emp = new Role(answers.name, answers.id, answers.email, response.name);
-myTeam.push(emp)
-roundThree()
+    ]).then(response2 => {
+        const emp = new Role(answers1.name, answers1.id, answers1.email, response2.unique);
+    myTeam.push(emp)
+    roundThree()
     })
     }
     function roundThree() {
@@ -74,14 +76,17 @@ roundThree()
             choices: ['Yes', 'No'],
             name: "role"
           }
-    ]).then(response => {
-      if(response.role === 'Yes') {
-          inquireQuestions()
+    ]).then(response3 => {
+      if(response3.role === 'Yes') {
+          roundOne()
       } else {
           const html = render(myTeam)
+          fs.writeFile(outputPath, html, error => {
+            if(error)throw error;
+          })
           console.log(html)
       }
     })
         
     }
-    inquireQuestions();
+    roundOne();
