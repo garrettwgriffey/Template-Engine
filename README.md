@@ -2,7 +2,7 @@
 
   <img align="left" src= "https://img.shields.io/badge/License-MIT-green">
 
-  <img align="right" width="100" height="100" src="https://avatars.githubusercontent.com/u/59263270?">;
+  <img align="right" width="100" height="100" src="https://avatars.githubusercontent.com/u/59263270?">
 
   
 # **Project** 
@@ -34,7 +34,7 @@ Garrett Wells Griffey
 #### * Email: [garrettwgriffey@gmail.com](garrettwgriffey@gmail.com)
 #### * LinkedIn: https://www.linkedin.com/in/garrettwgriffey
 
-<img src"assets/employeeEngine.gif">
+<img src="assets/employeeEngine.gif">
 
 ## 
 
